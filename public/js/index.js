@@ -17,4 +17,9 @@ function changeword() {
   //화면 요소를 선택 해야함. = 함수 querySelector 사용
   document.querySelector('#World').innerHTML = "안녕!";
 }
+function changeValue(){
+  let num = 78;
+  console.log(document.querySelector("#user_value").value = num);
+  document.querySelector("#user_value").value = num;
+}
 
