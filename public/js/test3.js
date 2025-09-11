@@ -13,3 +13,5 @@ if((num1+num2) % 3 == 0){
   
 }
 else{console.log(result + "는 3의 배수가 아닙니다")}
+
+consol.log(잠온다)
