@@ -3,8 +3,10 @@
 //while 반복문 사용하여 입력받은 총 점수 구하기.
 // let userValue = prompt("숫자를 입력하세요. 종료하려면 exit");
 // let userValue = 'exit'
+// 평균 => 총합/명
 
 let sum = 0;
+let cnt = 0;
 
 while (true) {
   userValue = prompt( 'exit를 넣으면 명륜진사갈비를 부수겠다.');
@@ -13,11 +15,9 @@ while (true) {
   }
   else {
     sum = sum+parseInt(userValue);
+    cnt++;
   }
-  
-  console.log(parseInt(userValue));
-
 }
 
 console.log('명륜진사갈비,,,부쉈다고,,,,,,');
-console.log(`합계=${sum}`);
+console.log(`합계=${sum} 평균=${sum/cnt}`);
