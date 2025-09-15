@@ -51,9 +51,9 @@ document.querySelector('button#addBtn')
     for(let i=0; i<nodeList.length; i++){
       console.dir(nodeList[i]);  // td .innerHTML ,td,td .innerHTML,td
     
-    if(nodeList[i].children[0].innerHTML== sno){
+    if(nodeList[i].children[0].innerHTML== sno){  //찾을값 비교.
       // console.log(100);
-      nodeList[i].children[2].innerHTML=score;
+      nodeList[i].children[2].innerHTML=score; //변경값 할당.
     }
     }
     

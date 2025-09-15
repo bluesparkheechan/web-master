@@ -1,8 +1,8 @@
 function cal(){
-  const num3 = perseInt(document.querySelector('#num1').value);
-  const num4 = perseInt(document.querySelector('#num2').value);
+  const num3 = parseInt(document.querySelector("#num1").value);
+  const num4 = parseInt(document.querySelector("#num2").value);
   let result = 0;
-  switch (querySelector('#oper').value) {
+  switch (document.querySelector('#oper').value) {
     case '+':
       result = num3+num4;
       break;
