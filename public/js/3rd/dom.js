@@ -28,6 +28,7 @@ document.querySelector('#addBtn')
 
 
 function makeTr(newElement) {
+  console.log(newElement);
   let tr = document.createElement('tr');
   for (let prop in newElement) {
     let td = document.createElement('td');
