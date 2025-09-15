@@ -13,9 +13,61 @@
 </head>
 
 <body>
-  <h3>오늘은 반복문, 함수, 이벤트</h3>
-  <script src="/js/2nd/todo.js"></script>
-  <input type="number" id="num1" name="num1" value="0">
+  <h3>2일차: 반복문, 함수 </h3>
+  <h3>3일차: 이벤트, DOM </h3>
+  <div id="student">
+    <table class='table'>
+      <tbody>
+
+        <tr>
+          <th>학생번호</th>
+          <td><input type="text" id="std_no"></td>
+        </tr>
+        <tr>
+          <th>학생이름</th>
+          <td><input type="text" id="std_name"></td>
+        </tr>
+        <tr>
+          <th>학생점수</th>
+          <td><input type="number" id="std_score"></td>
+
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <button id="addBtn">등록</button>
+            <button class="addBtn">수정</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="list">
+    <table class="table">
+      <thead>
+
+        <tr>
+          <th>학생번호</th>
+          <th>학생이름</th>
+          <th>학생점수</th>
+          <th>초기화</th>
+        </tr>
+
+
+      </thead>
+      <tbody>
+        <!-- <tr>
+          <td>값</td>
+          <td>값</td>
+          <td>값</td>
+        </tr> -->
+      </tbody>
+      
+    </table>
+
+  </div>
+  <script src="/js/3nd/event.js"></script>
+  <!-- <input type="number" id="num1" name="num1" value="0">
   <select id="col1" >
     <option value='+'>+</option>
     <option value='-'>-</option> 
@@ -24,7 +76,7 @@
   </select>
   <input type="number" id="num2" name="num2" value="0">
   = <input type: readonly ="number" id="number" name="number">
-  <button onclick="calculate()">계산</button>
+  <button onclick="calculate()">계산</button> -->
 
 </body>
 
