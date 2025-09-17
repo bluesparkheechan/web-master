@@ -56,3 +56,16 @@ xhtp.onload = function () {
     document.querySelector('#data-container').appendChild(div);
   });
 }
+
+// 객체의 속성.
+const person = {
+  name: 'Do',
+  birth: '1998-09-19',
+  phone: '010-9999-9999'
+}
+person.name;
+person['birth'];
+console.log(person['birth']);
+const prop = 'phone';
+person[prop];
+console.log(person[prop]);
