@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>board</title>
+  <style>
+    /* 전체 페이지 배경 및 기본 폰트 설정 */
+    body {
+      background-color: #f4f7f9;
+      /* 부드러운 회색 배경 */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* 깔끔한 기본 폰트 */
+      padding: 20px;
+    }
+
+    /* 데이터 전체를 감싸는 컨테이너 */
+    .data-container {
+      max-width: 700px;
+      margin: 40px auto;
+      /* 페이지 중앙 정렬 */
+      background-color: #ffffff;
+      /* 흰색 배경 */
+      border-radius: 10px;
+      /* 모서리를 둥글게 */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      /* 부드러운 그림자 효과 */
+      overflow: hidden;
+      /* 자식 요소가 모서리를 넘지 않도록 */
+    }
+
+    /* 각 데이터 항목 (한 줄) */
+    .data-container>div {
+      display: flex;
+      /* 내부 요소를 가로로 정렬 (Flexbox) */
+      align-items: center;
+      /* 세로 중앙 정렬 */
+      padding: 18px 25px;
+      border-bottom: 1px solid #eef2f5;
+      /* 항목 사이에 얇은 구분선 */
+      transition: background-color 0.3s ease;
+      /* 부드러운 배경색 전환 효과 */
+    }
+
+    /* 마지막 항목의 아래쪽 구분선 제거 */
+    .data-container>div:last-child {
+      border-bottom: none;
+    }
+
+    /* 마우스를 올렸을 때 배경색 변경 */
+    .data-container>div:hover {
+      background-color: #fafcff;
+    }
+
+    /* 데이터 ID */
+    .data-id {
+      background-color: #eef2f5;
+      color: #5c6ac4;
+      /* 포인트 색상 */
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.85em;
+      margin-right: 20px;
+    }
+
+    /* 데이터 제목 */
+    .data-title {
+      flex-grow: 1;
+      /* 남은 공간을 모두 차지하여 author를 오른쪽 끝으로 밀어냄 */
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #333;
+    }
+
+    /* 데이터 작성자 */
+    .data-author {
+      color: #777;
+      font-size: 0.9em;
+      min-width: 80px;
+      /* 최소 너비 확보 */
+      text-align: right;
+    }
+  </style>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 380px;
+      padding: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      /* 요소 사이의 간격 */
+    }
+
+    input[type="text"] {
+      border: none;
+      border-bottom: 2px solid #ccc;
+      /* 밑줄 스타일 */
+      padding: 10px 5px;
+      font-size: 18px;
+      background-color: transparent;
+      transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #333;
+      /* 포커스 시 밑줄 색 변경 */
+    }
+
+    button {
+      background-color: #2d2d2d;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form action="./index.html" method="get">
+      <input type="text" , name="title" placeholder="Enter Title">
+      <input type="text" name="author" placeholder="Enter Name">
+      <button type="submit" name="button">입력</button>
+    </form>
+  </div>
+  <div class="data-container" id="data-container">
+    <!-- <div>
+      <span class="data-id">1</span>
+      <span class="data-title">Test</span>
+      <span class="data-author">user01</span>
+    </div> -->
+    <script src="./db.js"></script>
+</body>
+
+</html>
+<!-- <div>
+
+ </div> -->
+
+<!-- <span></span> -->
