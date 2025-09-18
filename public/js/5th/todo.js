@@ -36,11 +36,22 @@
 //   console.log(num);
 // }
 
-let num1 = ''
+// let num1 = ''
+// for (let i = 0; i < 5; i++) {
+//   for (let j = i; j < 5; j++) {
+//     num1 += '*'
+//   }
+//   console.log(num1);
+//   num1 = ''
+// }
+
+let num = ''
 for (let i = 0; i < 5; i++) {
   for (let j = i; j < 5; j++) {
-    num1 += '*'
+    for (let k = j; k < 5; k++) {
+      num1 += '*'
+    }
   }
   console.log(num1);
-  num1 = ''
+  num1 = '';
 }
