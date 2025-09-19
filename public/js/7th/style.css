@@ -1,0 +1,41 @@
+.data-container {
+  /* Use flexbox for a single-line layout */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adds space between each student's row */
+}
+
+.data-container div {
+  /* Use flexbox for the individual student rows */
+  display: flex;
+  align-items: center; /* Vertically aligns items in the row */
+  background-color: #f4f4f4; /* Light gray background for rows */
+  padding: 10px;
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ddd; /* A subtle border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+}
+
+.data-container span {
+  /* Give each span some space and a consistent size */
+  padding: 0 10px;
+}
+
+.data-sno {
+  /* Style for the student number */
+  font-weight: bold;
+  color: #337ab7; /* A nice blue color */
+}
+
+.data-sname {
+  /* Style for the student name */
+  flex-grow: 1; /* Allows the name to take up available space */
+  font-weight: 500;
+}
+
+.data-score {
+  /* Style for the student score */
+  font-weight: bold;
+  color: #5cb85c; /* A nice green color for scores */
+  font-size: 1.1em;
+}
