@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+  </script>
+</head>
+
+<body>
+  <h3>emp 데이터 목록</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>사번</th>
+        <th>이름</th>
+        <th>직무</th>
+        <th>급여</th>
+
+      </tr>
+    </thead>
+    <tbody id="list">
+
+    </tbody>
+  </table>
+  <script>
+    //cors 원칙 위배 >>>> 라이브 서버 안열림 
+    // http://localhost:3000/emp => json 데이터.
+    // http://localhost:5500 => 클라이언트 
+    // 웹브라우저는 동일한 리소스의 정보만 가져오도록 되어있다.(보안상의 이유) === 동일출처원칙
+    // >> 그렇다면 cors 원칙을 위배하더라도 작동하도록 "서버"에서 설정한다...
+    // >> 3000번 포트를 5500번 포트인척 하도록 셋팅 (모듈 다운 mpn install cors)...
+    fetch('http://localhost:3000/emp')
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        console.log('서버로부터 받은 데이터:', result);
+        console.log('result의 타입:', typeof result);
+        result.rows.forEach(item => {
+          let tr = makeRow(item);
+          document.querySelector('#list').appendChild(tr);
+        })
+      })
+      .catch((err) => console.log(err));
+
+    function makeRow(employee) {
+      let fields = ['EMPNO', 'ENAME', 'JOB', 'SAL'];
+      let tr = document.createElement('tr');
+      tr.setAttribute("data-eno", employee.EMPNO)
+      fields.forEach(field => {
+        let td = document.createElement("td");
+        td.innerHTML = employee[field];
+        tr.appendChild(td);
+      })
+      // 삭제버튼
+      let btn = document.createElement("button");
+      btn.innerHTML = '삭제'
+      btn.addEventListener('click', deleteFnc);
+      let td = document.createElement('td');
+      td.appendChild(btn);
+      tr.appendChild(td);
+      return tr;
+    }
+
+    function deleteFnc(e) {
+      console.log(this.parentElement.parentElement.dataset.eno); // data-eno      
+      let thisTr = this.parentElement.parentElement;
+      let eno = this.parentElement.parentElement.dataset.eno;
+      fetch('http://localhost:3000/emp/' + eno)
+        .then(response => response.json())
+        .then(result => {
+          if (result.rowsAffected) {
+            alert('성공');
+            thisTr.remove();
+          } else {
+            alert('실패');
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    }
+  </script>
+</body>
+
+</html>

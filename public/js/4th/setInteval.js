@@ -9,7 +9,7 @@ console.log(strAry);
 const outer = document.querySelector('.outer');
 let timing = 0;
 
-function Refreshi() {
+function Refresh() {
   strAry.forEach(function (item, idx, ary) {
     let div = document.createElement('div');
     div.innerText = item;
@@ -20,7 +20,7 @@ function Refreshi() {
   colorRows();
 }
 
-Refreshi();
+Refresh();
 
 document.querySelector('#search_word')
   .addEventListener('click', function () {

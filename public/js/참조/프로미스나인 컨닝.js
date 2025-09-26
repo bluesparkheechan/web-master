@@ -10,7 +10,7 @@ const promise = new Promise(function (resolve, reject) {
 
 /////////////////프로미스의 메서드//////////////////////
 
-// promise가 정상적  으로 실행이 되면 thne 안에 있는 함수 실행
+// promise가 정상적  으로 실행이 되면 then 안에 있는 함수 실행
 promise
   .then(function (response) {
     console.log(response);
